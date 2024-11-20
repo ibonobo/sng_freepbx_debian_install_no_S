@@ -1,5 +1,6 @@
-2024-02-20 Version 1.0 is in BETA and for testing only. Not suitable for production systems.
-ibonobo: replaced switch -S with -s for add_repository
+2024-02-20 Version 1.0 is in BETA and for testing only. Not suitable for production systems. 
+
+ibonobo: replaced switch -S with -s for add_repository; added _no_s in name; must be used with --skipversion switch; even thus, the script rendered existing Debian 10 install unusable most likely due to conflicting libc versions - I will attach logs
 
 ```
  ______             _____  ______   __
@@ -46,13 +47,13 @@ Steps -
 2) Download the file using `wget`:
 
 ```bash
-wget https://github.com/FreePBX/sng_freepbx_debian_install/raw/master/sng_freepbx_debian_install.sh -O /tmp/sng_freepbx_debian_install.sh
+wget https://github.com/ibonobo/sng_freepbx_debian_install_no_s/raw/master/sng_freepbx_debian_install.sh -O /tmp/sng_freepbx_debian_install_no_s.sh
 ```
 
 3) Execute the script:
 
 ```bash
-bash /tmp/sng_freepbx_debian_install.sh
+bash /tmp/sng_freepbx_debian_install_no_s.sh
 ```
 
 The script will install the necessary dependencies for FreePBX, followed by the FreePBX software itself.
