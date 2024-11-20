@@ -1,0 +1,141 @@
+root@rnSJp7G10:/var/log/pbx# cd /etc/apt
+root@rnSJp7G10:/etc/apt# ls
+apt.conf.d  auth.conf.d  listchanges.conf  preferences.d  sources.list  sources.list.d  sources.list.save  trusted.gpg.d
+root@rnSJp7G10:/etc/apt# ll
+-bash: ll: command not found
+root@rnSJp7G10:/etc/apt# ls -al
+total 40
+drwxr-xr-x  7 root root 4096 Nov 20 07:04 .
+drwxr-xr-x 80 root root 4096 Nov 20 07:04 ..
+drwxr-xr-x  2 root root 4096 Nov 20 07:04 apt.conf.d
+drwxr-xr-x  2 root root 4096 May 28  2019 auth.conf.d
+-rw-r--r--  1 root root  150 Oct 21  2019 listchanges.conf
+drwxr-xr-x  2 root root 4096 Nov 20 07:04 preferences.d
+-rw-r--r--  1 root root 1190 Nov 20 07:04 sources.list
+drwxr-xr-x  2 root root 4096 May 28  2019 sources.list.d
+-rw-r--r--  1 root root 1042 Nov 20 07:04 sources.list.save
+drwxr-xr-x  2 root root 4096 Nov 20 07:04 trusted.gpg.d
+root@rnSJp7G10:/etc/apt# ls -al sources.list.d
+total 8
+drwxr-xr-x 2 root root 4096 May 28  2019 .
+drwxr-xr-x 7 root root 4096 Nov 20 07:04 ..
+root@rnSJp7G10:/etc/apt# ls -al preferences.d/
+total 12
+drwxr-xr-x 2 root root 4096 Nov 20 07:04 .
+drwxr-xr-x 7 root root 4096 Nov 20 07:04 ..
+-rw-r--r-- 1 root root   57 Nov 20 07:04 99sangoma-fpbx-repository
+root@rnSJp7G10:/etc/apt# cls
+-bash: cls: command not found
+root@rnSJp7G10:/etc/apt# more preferences.d/99sangoma-fpbx-repository
+Package: *
+Pin: origin deb.freepbx.org
+Pin-Priority: 600
+root@rnSJp7G10:/etc/apt# more sources.list
+#
+
+# deb cdrom:[Debian GNU/Linux 10.1.0 _Buster_ - Official amd64 xfce-CD Binary-1 20190908-01:08]/ buster main
+
+# deb cdrom:[Debian GNU/Linux 10.1.0 _Buster_ - Official amd64 xfce-CD Binary-1 20190908-01:08]/ buster main
+
+deb http://deb.debian.org/debian/ buster main
+deb-src http://deb.debian.org/debian/ buster main
+
+deb http://security.debian.org/debian-security buster/updates main
+deb-src http://security.debian.org/debian-security buster/updates main
+
+# buster-updates, previously known as 'volatile'
+deb http://deb.debian.org/debian/ buster-updates main
+deb-src http://deb.debian.org/debian/ buster-updates main
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+deb [arch=amd64] http://deb.freepbx.org/freepbx17-prod bookworm main
+deb-src [arch=amd64] http://deb.freepbx.org/freepbx17-prod bookworm main
+deb http://ftp.debian.org/debian stable main non-free non-free-firmware
+deb-src http://ftp.debian.org/debian stable main non-free non-free-firmware
+# see the sources.list(5) manual.
+root@rnSJp7G10:/etc/apt# ll
+-bash: ll: command not found
+root@rnSJp7G10:/etc/apt# ls -al
+total 40
+drwxr-xr-x  7 root root 4096 Nov 20 07:04 .
+drwxr-xr-x 80 root root 4096 Nov 20 07:04 ..
+drwxr-xr-x  2 root root 4096 Nov 20 07:04 apt.conf.d
+drwxr-xr-x  2 root root 4096 May 28  2019 auth.conf.d
+-rw-r--r--  1 root root  150 Oct 21  2019 listchanges.conf
+drwxr-xr-x  2 root root 4096 Nov 20 07:04 preferences.d
+-rw-r--r--  1 root root 1190 Nov 20 07:04 sources.list
+drwxr-xr-x  2 root root 4096 May 28  2019 sources.list.d
+-rw-r--r--  1 root root 1042 Nov 20 07:04 sources.list.save
+drwxr-xr-x  2 root root 4096 Nov 20 07:04 trusted.gpg.d
+root@rnSJp7G10:/etc/apt# ls -al apt.conf.d/
+total 44
+drwxr-xr-x 2 root root 4096 Nov 20 07:04 .
+drwxr-xr-x 7 root root 4096 Nov 20 07:04 ..
+-rw-r--r-- 1 root root   82 Oct 21  2019 00CDMountPoint
+-rw-r--r-- 1 root root   40 Oct 21  2019 00trustcdrom
+-rw-r--r-- 1 root root 1018 May 28  2019 01autoremove
+-r--r--r-- 1 root root 2443 Nov 20 06:14 01autoremove-kernels
+-rw-r--r-- 1 root root  202 Mar 17  2019 20listchanges
+-rw-r--r-- 1 root root 1040 Mar  2  2019 20packagekit
+-rw-r--r-- 1 root root 6386 Jun  8  2019 50unattended-upgrades
+-rw-r--r-- 1 root root  182 Feb 26  2019 70debconf
+root@rnSJp7G10:/etc/apt# more listchanges.conf
+[apt]
+frontend=pager
+which=news
+email_address=root
+email_format=text
+confirm=false
+headers=false
+reverse=false
+save_seen=/var/lib/apt/listchanges.db
+
+root@rnSJp7G10:/etc/apt# more sources.list.save
+#
+
+# deb cdrom:[Debian GNU/Linux 10.1.0 _Buster_ - Official amd64 xfce-CD Binary-1 20190908-01:08]/ buster main
+
+# deb cdrom:[Debian GNU/Linux 10.1.0 _Buster_ - Official amd64 xfce-CD Binary-1 20190908-01:08]/ buster main
+
+deb http://deb.debian.org/debian/ buster main
+deb-src http://deb.debian.org/debian/ buster main
+
+deb http://security.debian.org/debian-security buster/updates main
+deb-src http://security.debian.org/debian-security buster/updates main
+
+# buster-updates, previously known as 'volatile'
+deb http://deb.debian.org/debian/ buster-updates main
+deb-src http://deb.debian.org/debian/ buster-updates main
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+deb [arch=amd64] http://deb.freepbx.org/freepbx17-prod bookworm main
+deb-src [arch=amd64] http://deb.freepbx.org/freepbx17-prod bookworm main
+# see the sources.list(5) manual.
+root@rnSJp7G10:/etc/apt# ls -al apt.conf.d/
+total 44
+drwxr-xr-x 2 root root 4096 Nov 20 07:04 .
+drwxr-xr-x 7 root root 4096 Nov 20 07:04 ..
+-rw-r--r-- 1 root root   82 Oct 21  2019 00CDMountPoint
+-rw-r--r-- 1 root root   40 Oct 21  2019 00trustcdrom
+-rw-r--r-- 1 root root 1018 May 28  2019 01autoremove
+-r--r--r-- 1 root root 2443 Nov 20 06:14 01autoremove-kernels
+-rw-r--r-- 1 root root  202 Mar 17  2019 20listchanges
+-rw-r--r-- 1 root root 1040 Mar  2  2019 20packagekit
+-rw-r--r-- 1 root root 6386 Jun  8  2019 50unattended-upgrades
+-rw-r--r-- 1 root root  182 Feb 26  2019 70debconf
+root@rnSJp7G10:/etc/apt# more apt.conf.d/20listchanges
+DPkg::Pre-Install-Pkgs { "/usr/bin/apt-listchanges --apt || test $? -lt 10"; };
+DPkg::Tools::Options::/usr/bin/apt-listchanges::Version "2";
+DPkg::Tools::Options::/usr/bin/apt-listchanges::InfoFD "20";
+root@rnSJp7G10:/etc/apt# ldd --version
+ldd (Debian GLIBC 2.28-10+deb10u4) 2.28
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Written by Roland McGrath and Ulrich Drepper.
